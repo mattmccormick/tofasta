@@ -102,7 +102,7 @@ Pass `wrap=60` if you want the conventional look.
 
 ## Documentation
 
-Full API reference documentation is available at [readthedocs](https://tofasta.readthedocs.io/en/latest/index.html).
+Full API reference documentation is available at [readthedocs](https://tofasta.readthedocs.io).
 
 ## Scope
 
