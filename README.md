@@ -100,6 +100,10 @@ soft-links the input instead of copying it and requires single-line records.
 
 Pass `wrap=60` if you want the conventional look.
 
+## Documentation
+
+Full API reference documentation is available at [readthedocs](https://tofasta.readthedocs.io/en/latest/index.html).
+
 ## Scope
 
 This library writes FASTA. It does not read it. Reading looks symmetric but is
