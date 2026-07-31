@@ -133,11 +133,13 @@ uv sync
 uv run pytest
 ```
 
-To build the documentation the way Read the Docs does, warnings included:
+To build the documentation, use the same flags Read the Docs does. The `-W` and
+`-j auto` both matter: warnings are errors there, and parallel builds surface
+extension incompatibilities that a serial build hides.
 
 ```bash
 uv sync --extra docs
-uv run sphinx-build -b html -W docs docs/_build/html
+uv run python -m sphinx -T -W --keep-going -j auto -b html docs docs/_build/html
 ```
 
 ## Licence

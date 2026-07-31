@@ -7,7 +7,7 @@ name = "tofasta"
 version = "0.1.0"
 description = "Convert pandas DataFrames and CSV files to FASTA, with validation that refuses to write malformed output."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Matt McCormick", email = "matt@mattmccormick.ca" }]
@@ -29,7 +29,12 @@ docs = [
     "sphinx>=7.2",
     "furo>=2024.1.29",
     "myst-parser>=2.0",
-    "sphinx-argparse>=0.4",
+    # 0.6.0 registers an ArgParseDomain without merge_domaindata, which fails
+    # under the parallel build (-j auto) that Read the Docs always uses:
+    # "merge_domaindata must be implemented in ArgParseDomain to be able to do
+    # parallel builds!". Excluded rather than capped, so a fixed release is
+    # picked up automatically.
+    "sphinx-argparse>=0.4,!=0.6.0",
 ]
 
 [project.urls]
