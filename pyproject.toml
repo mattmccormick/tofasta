@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [{ name = "Matt", email = "mattmccor@gmail.com" }]
+authors = [{ name = "Matt McCormick", email = "matt@mattmccormick.ca" }]
 keywords = ["fasta", "bioinformatics", "pandas", "csv", "sequence", "genomics"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -21,9 +21,21 @@ classifiers = [
 ]
 dependencies = ["pandas>=1.5"]
 
+# Docs live here rather than in [dependency-groups] because Read the Docs
+# installs them through pip's extras mechanism, which does not understand
+# PEP 735 groups.
+[project.optional-dependencies]
+docs = [
+    "sphinx>=7.2",
+    "furo>=2024.1.29",
+    "myst-parser>=2.0",
+    "sphinx-argparse>=0.4",
+]
+
 [project.urls]
-Homepage = "https://github.com/mattmccor/tofasta"
-Issues = "https://github.com/mattmccor/tofasta/issues"
+Homepage = "https://github.com/mattmccormick/tofasta"
+Documentation = "https://tofasta.readthedocs.io"
+Issues = "https://github.com/mattmccormick/tofasta/issues"
 
 [project.scripts]
 tofasta = "tofasta._cli:main"

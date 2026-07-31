@@ -126,6 +126,20 @@ Several of the checks here are regression tests against real defects in CDC's
 unconditionally and writes a phantom `>undefined` record with an empty sequence
 whenever the identifier is not the first column of the input.
 
+## Development
+
+```bash
+uv sync
+uv run pytest
+```
+
+To build the documentation the way Read the Docs does, warnings included:
+
+```bash
+uv sync --extra docs
+uv run sphinx-build -b html -W docs docs/_build/html
+```
+
 ## Licence
 
 MIT
